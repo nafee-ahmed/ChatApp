@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neutron</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <!-- <link rel="stylesheet" href="css/boilerplate.css"> -->
+</head>
+<body>
+    <div class="first-wrapper">
+        <div class="joiner-div">
+            <%- include("navbar.ejs") %>
+            <div class="second-wrapper">
+                <div class="flash-div">
+                    <div class="success-msg"><%= success %></div>
+                </div>
+                <div class="flash-div">
+                    <p class="failure-msg"><%= password %></p> 
+                </div>
+                <div class="profile-full-div">
+                    <div class="profile-box-div">
+                        <div class="upper-links">
+                            <a href=""><img src="../files/back arrow.png" alt="" id="back"></a>
+                            <a href="/editprofile" id="edit-a">Edit</a>
+                        </div>
+                        <img src="<%= user.picture.url %>" alt="" id="big-profile-img">
+                        <p>Username: <span><%= user.name %></span></p>
+                        <p>Email: <span><%= user.email %></span></p>
+                        <p>Date of Birth: <span><%= user.dob %></span></p>
+                        <div class="action-btns">
+                            <!-- <a href="">Verify</a> -->
+                           <a href="/logout" id="signout-a"><img src="../files/logout.png" alt="" id="signout-img">sign out</a>
+                           <a href="/delete" id="logout-a">  <img src="../files/delete.png" alt="" id="delete-img"> Delete Account</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer-span">
+            <span class="footer-span">All Rights Reserved | For Privacy Policy Please <a href="" class="a-footer">Click Here</a></span>
+        </footer>
+    </div>
+</body>
+</html>

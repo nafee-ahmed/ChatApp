@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neutron</title>
+    <link rel="stylesheet" href="css/editprofile.css">
+    <link rel="stylesheet" href="css/boilerplate.css">
+</head>
+<body>
+    <div class="first-wrapper">
+        <div class="joiner-div">
+            <%- include("navbar.ejs") %>
+
+            <div class="second-wrapper">
+                <div class="profile-full-div">
+                    <div class="profile-box-div">
+                        <div class="upper-links">
+                            <a href=""><img src="../files/back arrow.png" alt="" id="back"></a>
+                        </div>
+                        <img src="<%= user.picture.url %>" alt="" id="big-profile-img">
+
+                        <!-- enctype="multipart/form-data" -->
+                        <form action="/editprofile" method="POST" enctype="multipart/form-data">  
+                            <div>
+                                <div class="fields-wrapper">
+                                    <label for="name">Username: </label>
+                                    <input type="text" placeholder="enter name", id="name" class="fields" value="<%= user.name %>" name="name">
+                                </div>
+    
+                                <div class="fields-wrapper">
+                                    <label for="email">Email: </label>
+                                    <input type="email" name="email" id="email" placeholder="enter email" class="fields" value="<%= user.email %>">
+                                    <div class="flash-div">
+                                        <p class="failure-msg"><%= credentials %></p> 
+                                    </div>
+                                </div>
+    
+                                <div class="fields-wrapper">
+                                    <label for="password">Password: </label>
+                                    <input type="password" name="password" id="password" placeholder="enter password" class="fields">
+                                    <div class="flash-div">
+                                        <p class="failure-msg"><%= password %></p> 
+                                    </div>
+                                </div>
+    
+                                <div class="fields-wrapper">
+                                    <label for="dob">Date of Birth: </label>
+                                    <input type="text" name="dob" id="dob" placeholder="enter date of birth" class="fields" value="<%= user.dob %>">
+                                </div>
+                                <div class="fields-wrapper">
+                                    <label for="picture">Profile Picture: </label>
+                                    <input type="file" name="picture" id="picture" class="fields">
+                                </div>
+                                
+                                <div class="final-btn-wrapper">
+                                    <input type="submit" id="btn" value="Save">
+                                </div>
+                            </div>
+                        </form>
+        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer-span">
+            <span class="footer-span">All Rights Reserved | For Privacy Policy Please <a href="" class="a-footer">Click Here</a></span>
+        </footer>
+    </div>
+</body>
+</html>

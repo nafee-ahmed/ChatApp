@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neutron</title>
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/boilerplate.css">
+</head>
+<body>
+    <div class="first-wrapper">
+        <div class="joiner-div">
+            <%- include("navbar.ejs") %>
+
+            <div class="second-wrapper">
+                <div class="profile-full-div">
+                    <div class="profile-box-div">
+                        <p>Search Results for: <%= search %> </p>
+                        <div class="container">
+
+
+                            <% for(let result of results){ %>
+                                <% if(result._id.equals(user._id)){ continue; } %>
+                                <% let skip=false; %>  
+                                <% for(let b of user.blockList){ %>
+                                    <% if(result._id.equals(b._id)){ skip=true; } %>
+                                <% } %>
+                                <% if(skip){ continue; } %>  
+                                <div class="box">
+                                    <div class="inside-box">
+                                        <img src="<%= result.picture.url %>" alt="" class="profile-img">
+                                        <div class="h1-div">
+                                            <h1><%= result.name %></h1>
+                                        </div>
+                                        <div class="icon-div">
+                                            <% let message=false; %> 
+                                            <% for(let f of user.friends){ %>
+                                                <% if(result._id.equals(f._id)){ %>
+                                                    <% message=true %> 
+                                                <% } %>
+                                            <% } %>  
+                                            <% if(message){ %>
+                                                <a href="/<%= user._id %>/<%= result._id %>/personal_message"><img src="../files/send_message.png" alt="" class="action-icon"></a> 
+                                                <!-- Added -->
+                                            <% }else{ %>
+                                                <a href="/<%= user._id %>/<%= result._id %>/addfriend"><img src="../files/add_friend.png" alt="" class="action-icon"></a>
+                                            <% } %>
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            <% } %> 
+
+
+
+                            <!-- <div class="box">
+                                <div class="inside-box">
+                                    <img src="../files/profile.png" alt="" class="profile-img">
+                                    <div class="h1-div">
+                                        <h1>Nafmdsnfajbsgjhbajshgbi</h1>
+                                    </div>
+                                    <a href=""><img src="../files/send_message.png" alt="" class="action-icon"></a>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <div class="inside-box">
+                                    <img src="../files/profile.png" alt="" class="profile-img">
+                                    <div class="h1-div">
+                                        <h1>Nafi</h1>
+                                    </div>
+                                    <a href=""><img src="../files/add_friend.png" alt="" class="action-icon"></a>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <div class="inside-box">
+                                    <img src="../files/profile.png" alt="" class="profile-img">
+                                    <div class="h1-div">
+                                        <h1>Nafmdsnfajbsgjhbajshgbi</h1>
+                                    </div>
+                                    <a href=""><img src="../files/send_message.png" alt="" class="action-icon"></a>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <div class="inside-box">
+                                    <img src="../files/profile.png" alt="" class="profile-img">
+                                    <div class="h1-div">
+                                        <h1>Nafmdsnfajbsgjhbajshgbi</h1>
+                                    </div>
+                                    <a href=""><img src="../files/send_message.png" alt="" class="action-icon"></a>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <div class="inside-box">
+                                    <img src="../files/profile.png" alt="" class="profile-img">
+                                    <div class="h1-div">
+                                        <h1>Nafmdsnfajbsgjhbajshgbi</h1>
+                                    </div>
+                                    <a href=""><img src="../files/send_message.png" alt="" class="action-icon"></a>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <div class="inside-box">
+                                    <img src="../files/profile.png" alt="" class="profile-img">
+                                    <div class="h1-div">
+                                        <h1>Nafmdsnfajbsgjhbajshgbi</h1>
+                                    </div>
+                                    <a href=""><img src="../files/send_message.png" alt="" class="action-icon"></a>
+                                </div>
+                            </div> -->
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer-span">
+            <span class="footer-span">All Rights Reserved | For Privacy Policy Please <a href="" class="a-footer">Click Here</a></span>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neutron</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/boilerplate.css">
+</head>
+<body>
+    <div class="first-wrapper">
+        <div class="joiner-div">
+            <%- include("navbar.ejs") %>
+
+            <div class="second-wrapper">
+                <div class="active-chat-div">
+                    <div class="active-chat-text">
+                        <h3>Active Friends</h3>
+                    </div>
+                    <div class="active-people">
+                        <ul class="the-ul">
+                            <!-- <li class="active-people-li">
+
+                                <div class="active-sidebar">
+                                    <div class="div-of-img">
+                                        <img src="../files/profile.png" alt="" class="active-profile-img">
+                                    </div>
+                                    <div>
+                                        <a href=""><h4>Nafi</h4></a>
+                                        <h5>Hi. Is this you, bro?</h5>
+                                    </div>
+                                </div>
+                        
+                            </li> -->
+                                
+                            <!-- <li class="active-people-li">
+                                <div class="active-sidebar">
+                                    <div>
+                                        <img src="../files/profile.png" alt="" class="active-profile-img">
+                                    </div>
+                                    <div>
+                                        <a href=""><h4>Nafi</h4></a>
+                                        <h5>Hi. Is this you, bro?</h5>
+                                    </div>
+                                </div>
+                        
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="chat-full-div">
+                    <div class="active-person-div">
+                        <div>
+                            <!-- <img src="../files/profile.png" alt="" class="active-profile-img"> -->
+                        </div>
+                        <div>
+                            <h3>Temporary Notifications</h3>
+                        </div>
+                    
+                    </div>
+
+                    <div class="full-message-box">
+                        <!-- <div class="msg-wrapper">
+                            <div class="msg">
+                                <p>H</p>
+                            </div>
+                            <span id="you-time" class="time">12:00pm</span>
+                        </div>
+                        <div class="msg-wrapper">
+                            <div class="msg opp-msg">
+                                <p>hei</p>
+                            </div>
+                            <span id="not-you-time" class="time">12:00pm</span>
+                        </div>  -->
+                    </div>
+
+                    <div class="chat-form-div">
+                        <form action="" id="chat-form">
+                            <input type="text" id="msg-input" placeholder="write your texts here" required autocomplete="off">
+                            <div class="btns">
+                                <!-- <input type="submit" value="" id="image-btn"> -->
+                                <input type="submit" value="" id="send-btn">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer-span">
+            <span class="footer-span">| Nafi | All Rights Reserved | For Privacy Policy Please <a href="" class="a-footer">Click Here</a></span>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
