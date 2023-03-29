@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neutron</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/boilerplate.css">
+</head>
+<body>
+    <div class="first-wrapper">
+        <div class="second-wrapper">
+            <main>
+                <div class="brand-div">
+                    <h1 id="brand">neutron chat</h1>
+                </div>
+
+                <div class="below-brand-div">
+                    <div class="login-text-div">
+                        <h1 id="signup">Sign Up</h1>
+                    </div>
+
+                    <div class="login-div">
+                        <form action="/signup" method="POST" id="form">
+                            <div class="name-div">
+                                <label for="name" class="credentials">Username: </label>
+                                <input type="text" id="name" name="name">
+                            </div>
+
+
+                            <div class="email-div">
+                                <label for="email" class="credentials">Email: </label>
+                                <input type="email" id="email" name="email">
+                                <div class="flash-div">
+                                    <p class="failure-msg"><%= email %></p> 
+                                </div>
+                            </div>
+    
+                            <div class="password-div">
+                                <label for="password" class="credentials">Password: </label>
+                                <input type="password" id="password" name="password">
+                                <div class="flash-div">
+                                    <p class="failure-msg"><%= password %></p> 
+                                </div>
+                            </div>
+
+                            <div class="dob-div">
+                                <label for="dob" class="credentials">Date of Birth </label>
+                                <input type="text" id="dob" name="dob">
+                            </div>
+    
+                            <div class="checkbox-div">
+                                <input type="checkbox" id="checkbox" required>
+                                <label for="checkbox">Accept Terms & Conditions & Privacy Policies </label>
+                            </div>
+                            <div id="submit-div">
+                                <input type="submit" value="Sign Up" id="submit-btn">
+                            </div>
+                        </form>
+
+                        <div class="signup-link">
+                            <span >Have an account?</span>
+                            <a href="/login">Login!</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer-span">
+            <span class="footer-span">All Rights Reserved | For Privacy Policy Please <a href="" class="a-footer">Click Here</a></span>
+        </footer>
+    </div>
+</body>
+</html>

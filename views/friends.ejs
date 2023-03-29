@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neutron</title>
+    <link rel="stylesheet" href="../css/friends.css">
+    <link rel="stylesheet" href="../css/boilerplate.css">
+</head>
+<body>
+    <div class="first-wrapper">
+        <div class="joiner-div">
+            <%- include("navbar.ejs") %>
+
+            <div class="second-wrapper">
+                
+                <div class="friends-div">
+                    <div class="added-text">
+                        <h3>Added Friends</h3>
+                    </div>
+                    <div class="added-friends">
+                        <ul>
+                            <% for(let f of user.friends){ %>
+                                <% let skip=false; %>  
+                                <% for(let b of user.blockList){ %>
+                                    <% if(f._id.equals(b._id)){ skip=true; } %>
+                                <% } %>
+                                <% if(skip){ continue; } %>  
+                                <li class="added-friends-li">
+                                    <div class="active-sidebar">
+                                        <div>
+                                            <img src="<%= f.picture.url %>" alt="" class="profile-img">
+                                        </div>
+                                        <div>
+                                            <a href="/friends/<%= f._id %>"><h4><%= f.name %></h4></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            <% } %> 
+                    
+                            <!-- <li class="added-friends-li">
+                                <div class="active-sidebar">
+                                    <div>
+                                        <img src="../files/profile.png" alt="" class="active-profile-img">
+                                    </div>
+                                    <div>
+                                        <a href=""><h4>Nafi</h4></a>
+                                    </div>
+                                </div>
+                        
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+                <% if(locals.friend){ %> 
+                    <div class="chat-full-div">
+                        <div class="friends-box-div">
+                            <img src="<%= friend.picture.url %>" alt="profile picture" id="big-profile-img">
+                            <p>Username: <span><%= friend.name %></span></p>
+                            <p>Email: <span><%= friend.email %></span></p>
+                            <p>Date of Birth: <span><%= friend.dob %></span></p>
+                            <div class="action-btns">
+                                <a href="/<%= user._id %>/<%= friend._id %>/personal_message" id="msg-a">Message</a>
+                                <a href="/unfriend/<%= friend._id %>" id="unfriend-a">Unfriend</a>
+                                <a href="/block/<%= friend._id %>" id="block-a">Block</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %> 
+            </div>
+        </div>
+
+        <footer class="footer-span">
+            <div class="flash-div">
+                <div class="success-msg"><%= success %></div>
+            </div>
+            <span class="footer-span">All Rights Reserved | For Privacy Policy Please <a href="" class="a-footer">Click Here</a></span>
+        </footer>
+    </div>
+</body>
+</html>

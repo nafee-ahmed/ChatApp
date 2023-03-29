@@ -1,0 +1,101 @@
+/*navbar*/
+.nav-header{
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    width: 93%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0 17px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 80px;
+}
+
+.nav-ul .nav-li{
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+img{
+    width: 35px;
+    height: 25px;
+}
+
+#friends{
+    width: 25px;
+    height: 15px;
+}
+
+.nav-li{
+    margin-left: -10px;
+}
+
+#back{
+    width: 17px;
+    height: 11px;
+}
+
+.nav-ul{
+    padding-left: 0;
+}
+
+.nav-a{
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#search-btn{
+    background-image: url(../files/search_image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+    background-color: white;
+    border: none;
+}
+
+.search-form{
+    border: 1px solid #707070;
+    margin-top: 8%;
+    padding: 7px 14px;
+    border-radius: 30px;
+}
+
+#search-input{
+    border: none;
+    width: 250px;
+    outline: none;
+}
+
+#search-input::-webkit-input-placeholder{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@media(max-width:700px){
+    #search-input{
+        width: 10%;
+    }
+    #back-li{
+        display: none;
+    }
+    .search-form{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #search-input{
+        width: 70%;
+        background: transparent;
+        margin-left: 3px;
+    }
+}

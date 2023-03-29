@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/navbar.css">
+<header class="nav-header">
+    <nav>
+        <ul class="nav-ul">
+            <li class="nav-li" id="back-li"><button href="" class="nav-a" onclick="window.history.back()"><img src="/files/back arrow.png" alt="" id="back"></button></li>
+            <li class="nav-li"><a href="/home" class="nav-a">neutron | chat</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-div">
+        <form action="/searchresults" class="search-form" method="GET">
+            <input type="text" id="search-input" name="search" placeholder="Search People">
+            <input type="submit" value="" id="search-btn">
+        </form>
+    </div>
+
+    <nav>
+        <ul class="nav-ul">
+            <li class="nav-li"><a href="/friends" class="nav-a"><img src="/files/friends.png" alt="" id="friends"></a></li>
+            <li class="nav-li"><a href="/logout" class="nav-a"><img src="/files/logout.png" alt=""></a></li>
+            <li class="nav-li"><a href="/getprofile" class="nav-a"><img src="<%= user.picture.url %>" alt="" id="small-profile-img"></a></li>
+            
+        </ul>
+    </nav>
+</header>

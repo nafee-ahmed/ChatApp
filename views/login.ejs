@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neutron</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/boilerplate.css">
+</head>
+<body>
+    <div class="first-wrapper">
+        <div class="flash-div">
+            <p class="success-msg"><%= success %></p> 
+        </div>
+        <div class="second-wrapper">
+            <main>
+                <div class="brand-div">
+                    <h1 id="brand">neutron chat</h1>
+                </div>
+
+                <div class="below-brand-div">
+                    <div class="login-text-div">
+                        <h1 id="login">LOGIN</h1>
+                    </div>
+
+                    <div class="login-div">
+                        <form action="/login" method="POST" id="form">
+                            <div class="email-div">
+                                <label for="email" class="credentials">Email: </label>
+                                <input type="email" id="email" name="email">
+                            </div>
+    
+                            <div class="password-div">
+                                <label for="password" class="credentials">Password: </label>
+                                <input type="password" id="password" name="password">
+
+                                <div class="flash-div">
+                                    <p class="failure-msg"><%= credentials %></p> 
+                                </div>
+                            </div>
+    
+                            <div class="checkbox-div">
+                                <input type="checkbox" id="checkbox">
+                                <label for="checkbox">Stay Signed in</label>
+                            </div>
+                            <div id="submit-div">
+                                <input type="submit" value="Login" id="submit-btn">
+                            </div>
+                        </form>
+
+                        <div class="signup-link">
+                            <span >Don’t Have an account?</span>
+                            <a href="/signup">Sign Up!</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer-span">
+            <span class="footer-span">All Rights Reserved | For Privacy Policy Please <a href="" class="a-footer">Click Here</a></span>
+        </footer>
+    </div>
+</body>
+</html>
